@@ -1,0 +1,19 @@
+body {
+  height: 100vh;
+}
+
+#root {
+  height: 100vh;
+  display: flex;
+}
+
+.editor-main {
+  flex-grow: 1;
+  z-index: 1;
+}
+
+vscode-data-grid,
+vscode-panels {
+  border: 2px dashed #7b61ff;
+  border-radius: 5px;
+}

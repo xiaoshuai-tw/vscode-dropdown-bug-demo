@@ -1,0 +1,60 @@
+{
+  "name": "vscode-dropdown-bug",
+  "displayName": "vscode-dropdown-bug",
+  "description": "vscode-dropdown-bug",
+  "publisher": "hyseim",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onWebviewPanel:buildProfile"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "customEditors": [
+      {
+        "viewType": "vscode.dropdownBug",
+        "displayName": "vscodeDropdownBug",
+        "selector": [
+          {
+            "filenamePattern": "vscode-dropdown-bug-demo.json"
+          }
+        ]
+      }
+    ],
+    "commands": [
+      {
+        "command": "vscode.dropdownBug.show",
+        "title": "Show VscodeDropdown Bug",
+        "category": "vscode"
+      }
+    ]
+  },
+  "scripts": {
+    "install:all": "npm install && cd webview-ui && npm install",
+    "start:webview": "cd webview-ui && npm run start",
+    "build:webview": "cd webview-ui && npm run build",
+    "test:webview": "cd webview-ui && npm run test",
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts"
+  },
+  "devDependencies": {
+    "@types/glob": "^8.0.0",
+    "@types/node": "16.x",
+    "@types/vscode": "^1.74.0",
+    "@typescript-eslint/eslint-plugin": "^5.54.1",
+    "@typescript-eslint/parser": "^5.54.1",
+    "eslint": "^8.26.0",
+    "glob": "^8.0.3",
+    "prettier": "^2.8.1",
+    "typescript": "^4.9.5",
+    "vscode-test": "^1.5.0"
+  }
+}
